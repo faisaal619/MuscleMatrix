@@ -14,7 +14,7 @@ const scrollToTop = () =>{
 
 const ExerciseCard = ({ exercise }) => (
 
-  <Link className="exercise-card" to={`/exercise/${exercise.id}`}  onClick={scrollToTop}   >
+  <Link className="exercise-card" to={`/exercise/${exercise.id}`} onClick={scrollToTop}  >
     <img src={exercise.gifUrl} alt={exercise.name} loading="lazy" />
     <Stack direction="row">
       <Button sx={{ ml: '21px', color: '#fff', background: '#FFA9A9', fontSize: '14px', borderRadius: '20px', textTransform: 'capitalize' }}>
