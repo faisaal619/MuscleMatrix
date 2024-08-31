@@ -37,13 +37,22 @@ const paginate = (e, value) => {
     window.scrollTo({top: 1800, behavior: 'smooth'})
 };
 
-
+const scrollToTop = () =>{ 
+  window.scrollTo({ 
+    top: 0,  
+    behavior: 'smooth'
+    /* you can also use 'auto' behaviour 
+       in place of 'smooth' */
+  }); 
+}; 
 
   return (
 <Box id="exercises" 
  sx={{mt: {lg: '110px'}}}
  mt="50px"
  p="20px"
+ onClick={scrollToTop}  
+
 >
 <Typography variant="h3" mb="46px">
   Showing Results

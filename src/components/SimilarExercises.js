@@ -5,10 +5,18 @@ import HorizontalScrollBar from './HorizontalScrollBar'
 import Loader
  from './Loader';
 const SimilarExercises = ({targetMuscleExercises, equipmentExercises}) => {
-
+  const scrollToTop = () =>{ 
+    window.scrollTo({ 
+      top: 0,  
+      behavior: 'smooth'
+      /* you can also use 'auto' behaviour 
+         in place of 'smooth' */
+    }); 
+  }; 
 
   return (
    <Box sx={{mt: {lg:'30px', xs:'0'}}} >
+    <Stack onClick={scrollToTop}  >
       <Typography sx={{ fontSize: { lg: '44px', xs: '25px' }, ml: '20px' }} fontWeight={700} color="#000" mb="33px">
       Similar <span style={{ color: '#FF2625', textTransform: 'capitalize' }}>Target Muscle</span> exercises
     </Typography>
@@ -22,6 +30,7 @@ const SimilarExercises = ({targetMuscleExercises, equipmentExercises}) => {
     </Typography>
      <Stack direction="row" sx={{ p: 2, position: 'relative' }}  >
       {equipmentExercises.length  ? <HorizontalScrollBar data={equipmentExercises}  /> : <Loader />}
+    </Stack>
     </Stack>
    </Box>
   )
