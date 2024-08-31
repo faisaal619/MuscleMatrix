@@ -29,13 +29,15 @@ const SearchExercises = ({setExercises, bodyPart, setBodyPart}) => {
         ||  exercise.equipment.toLowerCase().includes(search)
         ||  exercise.bodyPart.toLowerCase().includes(search)
         );
-
+       
         setSearch('');
         setExercises(searchedExercises);
 
       }
+      window.scrollTo({top: 1800, left:800, behavior: 'smooth'})
     }
-
+    
+  
 
 
   return (
@@ -61,6 +63,7 @@ const SearchExercises = ({setExercises, bodyPart, setBodyPart}) => {
         placeholder="Search Exercises"
         type="text"
     />
+   
     <Button className="search-btn"
     sx={{
         bgcolor: '#ff2625',
@@ -72,10 +75,12 @@ const SearchExercises = ({setExercises, bodyPart, setBodyPart}) => {
       position: "absolute",
       right: '0'
     }}
-    onClick={handleSearch}
+    onClick={handleSearch} 
+   
     >
      Search
     </Button>
+ 
 </Box>
 <Box sx={{position:'relative', width: '100%', p: '20px'}}>
    <HorizontalScrollBar data={bodyParts} bodyPart={bodyPart} setBodyPart={setBodyPart} isbodyParts/>

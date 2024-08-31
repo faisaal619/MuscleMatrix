@@ -40,25 +40,27 @@ const paginate = (e, value) => {
 const scrollToTop = () =>{ 
   window.scrollTo({ 
     top: 0,  
-    behavior: 'smooth'
+    behavior: 'auto'
     /* you can also use 'auto' behaviour 
        in place of 'smooth' */
   }); 
 }; 
+
 
   return (
 <Box id="exercises" 
  sx={{mt: {lg: '110px'}}}
  mt="50px"
  p="20px"
+ onClick={scrollToTop}
 >
 <Typography variant="h3" mb="46px">
   Showing Results
 </Typography>
 <Stack direction="row" sx={{ gap: {lg: '110px' , xs:'50px'}}}
-flexWrap="wrap" justifyContent="center" onClick={scrollToTop}  >
+flexWrap="wrap" justifyContent="center">
 {currentExercises.map ((exercise, index) => (
-<ExerciseCard key={index} exercise={exercise}/>
+<ExerciseCard key={index} exercise={exercise} />
 ))}
 </Stack> 
 <Stack mt="100px" alignItems="center">
