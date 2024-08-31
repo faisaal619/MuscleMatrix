@@ -12,8 +12,9 @@ const ExerciseCard = ({exercise}) => {
     }); 
   }; 
 
-  return (
-  <Link className="exercise-card" to={`/exercise/${exercise.id}`} onClick={scrollToTop}>
+  return ( 
+
+ <Link className="exercise-card" to={`/exercise/${exercise.id}`}  onClick={scrollToTop} >
      <img src={exercise.gifUrl} alt={exercise.name} loading="lazy"/>
     <Stack direction="row">
        <Button sx={{ml:'21px', color:'#fff', background: '#ffa9a9',
@@ -29,6 +30,8 @@ const ExerciseCard = ({exercise}) => {
         {exercise.name}
        </Typography>
   </Link>
+
+
   )
 }
 
