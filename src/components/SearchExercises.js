@@ -44,7 +44,7 @@ const SearchExercises = ({setExercises, bodyPart, setBodyPart}) => {
     fontSize:{lg: '44px', xs: '30px'}}} mb="50px" textAlign="center">
     Awesome Exercises You <br /> Should Know 
 </Typography>
-<Box position="relative" mb="72px">
+<Box position="relative" mb="72px" >
     <TextField 
     sx={{
         input: { fontWeight:'700',
