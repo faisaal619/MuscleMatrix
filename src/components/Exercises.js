@@ -34,7 +34,8 @@ const currentExercises = exercises.slice(indexOfFirstExercise, indexOfLastExerci
 
 const paginate = (e, value) => {
     setCurrentPage(value);
-    window.scrollTo({ top: 1800, behavior: 'smooth' });
+    window.scrollTo({ top: 1500, behavior: 'smooth' });
+
 };
 
 const scrollToTop = () =>{ 
@@ -55,6 +56,7 @@ if (!currentExercises.length) return <Loader />;
 >
 <Stack onClick={scrollToTop}>
 <Typography variant="h3" mb="46px">
+
   Showing Results
 </Typography>
 <Stack direction="row" sx={{ gap: {lg: '110px' , xs:'50px'}}  }

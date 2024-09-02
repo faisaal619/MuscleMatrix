@@ -34,7 +34,7 @@ const SearchExercises = ({setExercises, bodyPart, setBodyPart}) => {
         setExercises(searchedExercises);
 
       }
-      window.scrollTo({top: 1800, left:800, behavior: 'smooth'})
+      window.scrollTo({ top: 1500, left: 100, behavior: 'smooth' });
     }
     
   
@@ -76,7 +76,6 @@ const SearchExercises = ({setExercises, bodyPart, setBodyPart}) => {
       right: '0'
     }}
     onClick={handleSearch} 
-   
     >
      Search
     </Button>
