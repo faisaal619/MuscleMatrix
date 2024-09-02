@@ -4,7 +4,7 @@ import {Box, Stack, Typography} from '@mui/material';
 
 import { exerciseOptions, fetchData } from '../utils/fetchData';
 import ExerciseCard from './ExerciseCard'
-
+import Loader from './Loader';
 
 const Exercises = ({ exercises, setExercises, bodyPart }) => {
 
@@ -34,7 +34,7 @@ const currentExercises = exercises.slice(indexOfFirstExercise, indexOfLastExerci
 
 const paginate = (e, value) => {
     setCurrentPage(value);
-    window.scrollTo({top: 1800, behavior: 'smooth'})
+    window.scrollTo({ top: 1800, behavior: 'smooth' });
 };
 
 const scrollToTop = () =>{ 
@@ -46,23 +46,24 @@ const scrollToTop = () =>{
   }); 
 }; 
 
-
+if (!currentExercises.length) return <Loader />;
   return (
 <Box id="exercises" 
  sx={{mt: {lg: '110px'}}}
  mt="50px"
  p="20px"
- onClick={scrollToTop}
 >
+<Stack onClick={scrollToTop}>
 <Typography variant="h3" mb="46px">
   Showing Results
 </Typography>
-<Stack direction="row" sx={{ gap: {lg: '110px' , xs:'50px'}}}
+<Stack direction="row" sx={{ gap: {lg: '110px' , xs:'50px'}}  }
 flexWrap="wrap" justifyContent="center">
 {currentExercises.map ((exercise, index) => (
 <ExerciseCard key={index} exercise={exercise} />
 ))}
-</Stack> 
+</Stack>
+</Stack>
 <Stack mt="100px" alignItems="center">
      {exercises.length > 9 && (
       <Pagination
@@ -75,6 +76,7 @@ flexWrap="wrap" justifyContent="center">
           />
      )}
 </Stack>
+
 </Box>
   )
 }
